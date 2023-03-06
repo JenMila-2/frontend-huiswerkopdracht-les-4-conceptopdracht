@@ -1,3 +1,190 @@
-* {
+/*////////////////////////////////////////////////////////////////////////
+Table of Contents:
+    1. Global Styles
+    2. Typografie
+    3. Areas
+        3.1 Header
+        3.2 Testimonial
+        3.3 Support
+        3.4 Faq
+        3.5 Footer
+////////////////////////////////////////////////////////////////////////*/
 
+
+
+/*////////////////////////
+    1. Global Styles
+////////////////////////*/
+
+/* CSS reset */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
+
+:root {
+    --chrysler-blue: #5722CD;
+    --majorelle-blue: #4B49E8;
+    --magnolia: #F2F0FF;
+    --french-rose: #ED4385;
+    --night: #0C0C0C;
+
+    --light-gray: #F3F6F9;
+    --gray: #7A7A7A;
+    --blue: #4845E4;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+/*////////////////////////
+    2. Typography
+////////////////////////*/
+
+body {
+    font-family: Roboto, sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: Merriweather, sans-serif;
+}
+
+
+/*////////////////////////
+    3. Layout
+////////////////////////*/
+
+
+/*///////////// 3.1 Reusables /////////////*/
+
+/*///////////// 3.2 Other /////////////*/
+
+
+/*////////////////////////
+    4. Areas
+////////////////////////*/
+
+/*///////////// 4.1 Header /////////////*/
+
+.nav-bar {
+    display: flex;
+    justify-content: flex-end;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.nav-list {
+    display: flex;
+    margin-right: 1.5rem;
+}
+
+.nav-list a {
+    display: block;
+    font-size: 16px;
+    padding: 1rem;
+    color: var(--magnolia);
+}
+
+.header-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    padding: 50px 100px 150px 100px;
+}
+
+h1, p {
+    color: var(--magnolia);
+}
+
+header {
+    background: linear-gradient(90deg, rgba(75,73,232,1) 0%, rgba(77,16,214,1) 100%);
+}
+
+button {
+    display: inline-block;
+    border-radius: 25px;
+    background: var(--french-rose);
+    color: var(--magnolia);
+    box-shadow: rgba(25, 25, 25, 0.04) 0 0 1px 0, rgba(0, 0, 0, 0.1) 0 3px 4px 0;
+    text-transform: uppercase;
+    border: none;
+    padding: 1rem 2rem;
+    margin-top: 15px;
+}
+
+.welcome-section .company-intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px;
+    width: 100%;
+}
+
+.company-intro > p {
+    color: var(--chrysler-blue);
+    line-height: 1.5rem;
+    padding: 5px;
+}
+
+.welcome-section > p > span {
+    color: var(--night);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.welcome-section > p > span > a {
+    color: var(--chrysler-blue);
+}
+
+.squiggle-line-white {
+    position: relative;
+    width: 40px;
+}
+
+.squiggle-line-white > img {
+    position: absolute;
+    margin-top: -50px;
+    width: 45px;
+}
+
+
+/*///////////// 4.2 Introduction /////////////*/
+
+
+
+/*///////////// 4.3 Section 2 /////////////*/
+
+
+
+/*///////////// 4.4 Section 3 /////////////*/
+
+
+
+/*///////////// 4.5 Footer /////////////*/
+
+
+/*////////////////////////
+    5. Media Queries
+////////////////////////*/
+
