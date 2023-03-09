@@ -11,7 +11,6 @@ Table of Contents:
 ////////////////////////////////////////////////////////////////////////*/
 
 
-
 /*////////////////////////
     1. Global Styles
 ////////////////////////*/
@@ -35,8 +34,13 @@ Table of Contents:
     --blue: #4845E4;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 a {
     text-decoration: none;
+    color: var(--chrysler-blue);
 }
 
 ul {
@@ -45,7 +49,8 @@ ul {
 
 img {
     display: block;
-    width: 100%;
+    max-width: 100%;
+    height: auto;
 }
 
 /*////////////////////////
@@ -56,17 +61,42 @@ body {
     font-family: Roboto, sans-serif;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
     font-family: Merriweather, sans-serif;
 }
+h1 {
+    color: var(--magnolia);
+}
 
+h3 {
+    color: var(--chrysler-blue);
+}
+
+h4 {
+    color: var(--chrysler-blue);
+    font-weight: 400;
+    line-height: 1.8rem;
+}
 
 /*////////////////////////
     3. Layout
 ////////////////////////*/
 
-
 /*///////////// 3.1 Reusables /////////////*/
+
+.flex-outer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.flex-inner-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
 
 /*///////////// 3.2 Other /////////////*/
 
@@ -77,58 +107,25 @@ h1, h2, h3 {
 
 /*///////////// 4.1 Header /////////////*/
 
-.nav-bar {
-    display: flex;
-    justify-content: flex-end;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 10;
-}
-
-.nav-list {
-    display: flex;
-    margin-right: 1.5rem;
-}
-
-.nav-list a {
-    display: block;
-    font-size: 16px;
-    padding: 1rem;
-    color: var(--magnolia);
-}
-
-.header-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-    padding: 50px 100px 150px 100px;
-}
-
-h1, p {
-    color: var(--magnolia);
-}
-
 header {
     background: linear-gradient(90deg, rgba(75,73,232,1) 0%, rgba(77,16,214,1) 100%);
 }
 
-button {
-    display: inline-block;
-    border-radius: 25px;
-    background: var(--french-rose);
-    color: var(--magnolia);
-    box-shadow: rgba(25, 25, 25, 0.04) 0 0 1px 0, rgba(0, 0, 0, 0.1) 0 3px 4px 0;
-    text-transform: uppercase;
-    border: none;
-    padding: 1rem 2rem;
-    margin-top: 15px;
+.nav-bar .nav-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    top: 0;
+    left: 0;
+    padding: 20px 80px 20px 20px;
 }
 
-.welcome-section .company-intro {
+.nav-list a {
+    padding: 1rem;
+    color: var(--magnolia);
+}
+
+.intro {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -138,53 +135,245 @@ button {
     width: 100%;
 }
 
-.company-intro > p {
-    color: var(--chrysler-blue);
-    line-height: 1.5rem;
-    padding: 5px;
+.intro > p {
+    color: var(--magnolia);
+    line-height: 2.5rem;
+    margin-top: 10px;
 }
 
-.welcome-section > p > span {
-    color: var(--night);
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-}
-
-.welcome-section > p > span > a {
-    color: var(--chrysler-blue);
+button {
+    display: inline-block;
+    border-radius: 25px;
+    background: var(--french-rose);
+    color: var(--magnolia);
+    box-shadow: rgba(25, 25, 25, 0.04) 0 0 10px 0, rgba(0, 0, 0, 0.1) 0 5px 5px 0;
+    text-transform: uppercase;
+    border: none;
+    padding: 1rem 2rem;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    cursor: pointer;
 }
 
 .squiggle-line-white {
-    position: relative;
-    width: 40px;
+    background-image: url("./assets/squiggle_line_stripe.svg");
+    height: 70px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 
-.squiggle-line-white > img {
-    position: absolute;
-    margin-top: -50px;
-    width: 45px;
+/*///////////// 4.2 Introduction  /////////////*/
+
+.flex-outer-container-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
 }
 
+.company-intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    padding: 50px;
+}
 
-/*///////////// 4.2 Introduction /////////////*/
+.company-intro > p {
+    color: var(--night);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 5px;
+    padding: 80px 80px 50px 80px;
+}
 
+.company-intro > p > span {
+    color: var(--chrysler-blue);
+}
 
+/*///////////// 4.3 Projects Section /////////////*/
 
-/*///////////// 4.3 Section 2 /////////////*/
+.projects {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--light-gray);
+    padding-bottom: 60px;
+}
 
+.projects > article {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    text-align: left;
+    width: 90%;
+    margin: 2rem auto 0 auto;
+}
 
+.projects > article > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-grow: 0;
+    flex-shrink: 1;
+    justify-content: center;
+    padding: 20px 70px 20px 70px;
+}
 
-/*///////////// 4.4 Section 3 /////////////*/
+.projects > article > span > img {
+    width: 1500px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px;
+}
 
+.projects > article > div > h2 {
+    padding-bottom: 10px;
+}
 
+.projects > article > div > p {
+    padding-bottom: 30px;
+    padding-top: 20px;
+    flex-shrink: 1;
+}
 
-/*///////////// 4.5 Footer /////////////*/
+.projects > article > div > p > a {
+    text-transform: uppercase;
+}
 
+.squiggle-line {
+    background-image: url("./assets/squiggle_line.svg");
+    height: 50px;
+    width: 50px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+/*///////////// 4.4 Section Services /////////////*/
+
+.services-section-1 {
+    display: flex;
+    padding: 50px;
+    gap: 25px;
+}
+
+.services-section-2 {
+    display: flex;
+    padding: 0 50px 50px 50px;
+    gap: 25px;
+}
+
+.services-section-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    border: 1px solid var(--majorelle-blue);
+    padding: 30px;
+    width: 500px;
+    box-shadow: rgba(100, 100, 110, 0.2) 0 7px 35px 0;
+}
+
+.services-section-content > p {
+    padding-top: 20px;
+}
+
+.services-section-1 > div > span > img {
+    height: 50px;
+    padding-bottom: 10px;
+}
+
+.services-section-2 > div > span > img {
+    height: 50px;
+    padding-bottom: 10px;
+}
+
+/*///////////// 4.5 Form /////////////*/
+
+.form-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(75,73,232,1) 0%, rgba(77,16,214,1) 100%);
+    padding: 50px;
+}
+
+form {
+    padding: 20px;
+}
+
+label {
+    display: flex;
+    color: var(--magnolia);
+    margin-bottom: -8px;
+    font-family: Roboto, sans-serif;
+
+}
+
+input {
+    display: flex;
+    width: 400px;
+    border: 1px transparent;
+    border-radius: 2px;
+    padding: 10px;
+}
+
+textarea {
+    display: flex;
+    border: 1px transparent;
+    border-radius: 2px;
+    resize: none;
+    padding: 10px;
+}
+
+::placeholder {
+    color: var(--gray);
+    font-family: Roboto, sans-serif;
+}
+
+#form-button {
+    width: 100px;
+}
+
+/*///////////// 4.6 Footer /////////////*/
 
 /*////////////////////////
     5. Media Queries
 ////////////////////////*/
 
+@media screen and (max-width: 75em) {
+    html {
+        font-size: 90%;
+    }
+}
+
+@media screen and (max-width: 61.25em) {
+    html {
+        font-size: 70%;
+    }
+}
+
+@media screen and (max-width: 28.75em) {
+    html {
+        font-size: 60%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .projects > article {
+        flex-direction: column;
+    }
+}
