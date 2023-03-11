@@ -75,7 +75,7 @@ h3 {
 h4 {
     color: var(--chrysler-blue);
     font-weight: 400;
-    line-height: 1.8rem;
+    line-height: 1.5rem;
 }
 
 /*////////////////////////
@@ -192,12 +192,16 @@ button {
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding-top: 50px;
     gap: 5px;
-    padding: 80px 80px 50px 80px;
 }
 
 .company-intro > p > span {
     color: var(--chrysler-blue);
+}
+
+.company-intro > h4 {
+    padding-top: 15px;
 }
 
 /*///////////// 4.3 Projects Section /////////////*/
@@ -208,12 +212,13 @@ button {
     width: 100%;
     background-color: var(--light-gray);
     padding-bottom: 60px;
+    padding-top: 10px;
 }
 
 .projects > article {
     display: flex;
     justify-content: space-between;
-    padding: 10px;
+    padding: 10px 25px 10px 25px;
     text-align: left;
     width: 90%;
     margin: 2rem auto 0 auto;
@@ -230,7 +235,7 @@ button {
 }
 
 .projects > article > span > img {
-    width: 1500px;
+    width: 1250px;
     box-shadow: rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px;
 }
 
@@ -261,14 +266,18 @@ button {
 
 .services-section-1 {
     display: flex;
+    justify-content: center;
     padding: 50px;
     gap: 25px;
+    width: 100%;
 }
 
 .services-section-2 {
     display: flex;
+    justify-content: center;
     padding: 0 50px 50px 50px;
     gap: 25px;
+    width: 100%;
 }
 
 .services-section-content {
@@ -279,12 +288,15 @@ button {
     text-align: left;
     border: 1px solid var(--majorelle-blue);
     padding: 30px;
-    width: 500px;
+    width: 260px;
+    height: 260px;
     box-shadow: rgba(100, 100, 110, 0.2) 0 7px 35px 0;
 }
 
 .services-section-content > p {
-    padding-top: 20px;
+    padding-top: 10px;
+    font-size: 0.7rem;
+    color: var(--gray);
 }
 
 .services-section-1 > div > span > img {
@@ -310,8 +322,18 @@ button {
     padding: 50px;
 }
 
+.form-section > h1 {
+    font-size: 2.5rem;
+    padding-top: 20px;
+}
+
+.form-section > P {
+    color: var(--magnolia);
+    margin-top: 20px;
+}
+
 form {
-    padding: 20px;
+    padding: 10px;
 }
 
 label {
@@ -319,12 +341,12 @@ label {
     color: var(--magnolia);
     margin-bottom: -8px;
     font-family: Roboto, sans-serif;
-
+    font-weight: bold;
 }
 
 input {
     display: flex;
-    width: 400px;
+    width: 100%;
     border: 1px transparent;
     border-radius: 2px;
     padding: 10px;
@@ -344,10 +366,23 @@ textarea {
 }
 
 #form-button {
-    width: 100px;
+    padding: 15px 55px 15px 55px;
+    margin-top: 30px;
+
 }
 
 /*///////////// 4.6 Footer /////////////*/
+
+footer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+    background-color: var(--night);
+    color: var(--magnolia);
+}
 
 /*////////////////////////
     5. Media Queries
@@ -364,10 +399,16 @@ textarea {
         font-size: 70%;
     }
 }
+form > textarea {
+    width: 500px;
+}
 
 @media screen and (max-width: 28.75em) {
     html {
         font-size: 60%;
+    }
+    form > textarea {
+        width: 200px;
     }
 }
 
@@ -376,4 +417,26 @@ textarea {
     .projects > article {
         flex-direction: column;
     }
+    form > textarea {
+    width: 200px;
+    }
 }
+
+@media screen and (max-width: 600px) {
+    .services-section-content > p {
+        display: none;
+    }
+    .services-section-1 {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .services-section-2 {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
