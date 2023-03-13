@@ -31,6 +31,7 @@ Table of Contents:
 
     --light-gray: #F3F6F9;
     --gray: #7A7A7A;
+    --white: #fff;
     --blue: #4845E4;
 }
 
@@ -50,7 +51,6 @@ ul {
 img {
     display: block;
     max-width: 100%;
-    height: auto;
 }
 
 /*////////////////////////
@@ -70,6 +70,7 @@ h1 {
 
 h3 {
     color: var(--chrysler-blue);
+    font-size: 1rem;
 }
 
 h4 {
@@ -82,7 +83,7 @@ h4 {
     3. Layout
 ////////////////////////*/
 
-/*///////////// 3.1 Reusables /////////////*/
+/*///////////// 3.1 Re-usable /////////////*/
 
 .flex-outer-container {
     display: flex;
@@ -98,8 +99,81 @@ h4 {
     width: 100%;
 }
 
-/*///////////// 3.2 Other /////////////*/
+/*///////////// 3.2 Bonus /////////////*/
 
+/*.projects > article > div > p > a::after {
+
+}*/
+
+.bg-text {
+    position: relative;
+}
+
+.bg-text:after {
+    content: "hello";
+    position: absolute;
+    z-index: -1;
+    font-size: 18rem;
+    font-weight: 800;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--magnolia);
+}
+
+.bg-text-2 {
+    position: relative;
+    z-index: 1;
+}
+
+.bg-text-2:after {
+    content: "work";
+    position: absolute;
+    z-index: -1;
+    font-size: 18rem;
+    font-weight: 800;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color:var(--white);
+}
+
+.bg-text-3 {
+    position: relative;
+    z-index: 1;
+}
+
+.bg-text-3:after {
+    content: "services";
+    position: absolute;
+    z-index: -1;
+    font-size: 12rem;
+    font-weight: 800;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color:var(--magnolia);
+}
+
+/*#header-section::after {
+    content: ' ';
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    background-image: url("./assets/noise-texture.png");
+    background-position: bottom center;
+    background-size: auto;
+}
+
+#header-section::before {
+    content: ' ';
+    display: block;
+    position: relative;
+}*/
 
 /*////////////////////////
     4. Areas
@@ -108,7 +182,8 @@ h4 {
 /*///////////// 4.1 Header /////////////*/
 
 header {
-    background: linear-gradient(90deg, rgba(75,73,232,1) 0%, rgba(77,16,214,1) 100%);
+    background: linear-gradient(90deg, rgba(72,69,228,1) 35%, rgba(87,34,205,1) 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
 }
 
 .nav-bar .nav-list {
@@ -151,13 +226,13 @@ button {
     border: none;
     padding: 1rem 2rem;
     margin-top: 10px;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
     cursor: pointer;
 }
 
 .squiggle-line-white {
     background-image: url("./assets/squiggle_line_stripe.svg");
-    height: 70px;
+    height: 90px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -181,10 +256,11 @@ button {
     align-items: center;
     text-align: center;
     width: 100%;
-    padding: 50px;
+    padding: 30px;
+    margin-top: 30px;
 }
 
-.company-intro > p {
+.questions {
     color: var(--night);
     display: flex;
     flex-direction: row;
@@ -193,6 +269,7 @@ button {
     align-items: center;
     text-align: center;
     padding-top: 50px;
+    padding-bottom: 60px;
     gap: 5px;
 }
 
@@ -204,21 +281,21 @@ button {
     padding-top: 15px;
 }
 
-/*///////////// 4.3 Projects Section /////////////*/
+/*///////////// 4.3 Project Section /////////////*/
 
 .projects {
     display: flex;
     flex-direction: column;
     width: 100%;
     background-color: var(--light-gray);
-    padding-bottom: 60px;
-    padding-top: 10px;
+    padding-bottom: 150px;
+    padding-top: 150px;
 }
 
 .projects > article {
     display: flex;
     justify-content: space-between;
-    padding: 10px 25px 10px 25px;
+    padding: 10px 25px 5px 25px;
     text-align: left;
     width: 90%;
     margin: 2rem auto 0 auto;
@@ -231,12 +308,22 @@ button {
     flex-grow: 0;
     flex-shrink: 1;
     justify-content: center;
-    padding: 20px 70px 20px 70px;
+    padding: 20px;
 }
 
 .projects > article > span > img {
-    width: 1250px;
+    width: 100%;
     box-shadow: rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px;
+}
+
+.project-image {
+    flex-basis: 1500px;
+    flex-grow: 0;
+    flex-shrink: 1;
+}
+
+.projects > article > span {
+    padding: 50px -10px 50px -10px;
 }
 
 .projects > article > div > h2 {
@@ -253,6 +340,15 @@ button {
     text-transform: uppercase;
 }
 
+.projects .project-content {
+    padding: 0 80px 0 80px;
+}
+
+.projects {
+    background: var(--light-gray);
+    clip-path: polygon(0 0, 100% 4%, 100% 100%, 0 95%);
+}
+
 .squiggle-line {
     background-image: url("./assets/squiggle_line.svg");
     height: 50px;
@@ -260,25 +356,10 @@ button {
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    margin-top: -15px;
 }
 
-/*///////////// 4.4 Section Services /////////////*/
-
-.services-section-1 {
-    display: flex;
-    justify-content: center;
-    padding: 50px;
-    gap: 25px;
-    width: 100%;
-}
-
-.services-section-2 {
-    display: flex;
-    justify-content: center;
-    padding: 0 50px 50px 50px;
-    gap: 25px;
-    width: 100%;
-}
+/*///////////// 4.4 Services Section /////////////*/
 
 .services-section-content {
     display: flex;
@@ -291,6 +372,24 @@ button {
     width: 260px;
     height: 260px;
     box-shadow: rgba(100, 100, 110, 0.2) 0 7px 35px 0;
+    background-color: var(--white);
+}
+
+.services-section-1 {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+    gap: 25px;
+    width: 100%;
+    margin-top: 100px;
+}
+
+.services-section-2 {
+    display: flex;
+    justify-content: center;
+    padding: 0 50px 80px 50px;
+    gap: 25px;
+    width: 100%;
 }
 
 .services-section-content > p {
@@ -309,7 +408,7 @@ button {
     padding-bottom: 10px;
 }
 
-/*///////////// 4.5 Form /////////////*/
+/*///////////// 4.5 Form section /////////////*/
 
 .form-section {
     display: flex;
@@ -318,13 +417,14 @@ button {
     align-items: center;
     text-align: center;
     width: 100%;
-    background: linear-gradient(90deg, rgba(75,73,232,1) 0%, rgba(77,16,214,1) 100%);
     padding: 50px;
+    background: linear-gradient(90deg, rgba(72,69,228,1) 35%, rgba(87,34,205,1) 100%);
+    clip-path: polygon(0 0, 100% 12%, 100% 100%, 0% 100%);
 }
 
 .form-section > h1 {
-    font-size: 2.5rem;
-    padding-top: 20px;
+    font-size: 2.2rem;
+    padding-top: 50px;
 }
 
 .form-section > P {
@@ -339,7 +439,7 @@ form {
 label {
     display: flex;
     color: var(--magnolia);
-    margin-bottom: -8px;
+    margin-bottom: -15px;
     font-family: Roboto, sans-serif;
     font-weight: bold;
 }
@@ -368,7 +468,6 @@ textarea {
 #form-button {
     padding: 15px 55px 15px 55px;
     margin-top: 30px;
-
 }
 
 /*///////////// 4.6 Footer /////////////*/
@@ -390,7 +489,10 @@ footer {
 
 @media screen and (max-width: 75em) {
     html {
-        font-size: 90%;
+        font-size: 80%;
+    }
+    form > textarea {
+        width: 650px;
     }
 }
 
@@ -398,9 +500,12 @@ footer {
     html {
         font-size: 70%;
     }
-}
-form > textarea {
-    width: 500px;
+    form > textarea {
+        width: 500px;
+    }
+    label {
+        margin-bottom: -10px;
+    }
 }
 
 @media screen and (max-width: 28.75em) {
@@ -413,12 +518,14 @@ form > textarea {
 }
 
 @media screen and (max-width: 600px) {
-
     .projects > article {
         flex-direction: column;
     }
     form > textarea {
-    width: 200px;
+        width: 300px;
+    }
+    label {
+        margin-bottom: -10px;
     }
 }
 
