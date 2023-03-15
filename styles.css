@@ -101,15 +101,25 @@ h4 {
 
 /*///////////// 3.2 Bonus /////////////*/
 
-/*.projects > article > div > p > a::after {
+.projects > article > div > p > a::after {
+    content: " ";
+    display: inline-block;
+    width: 12px;
+    height: 2px;
+    background-color: var(--chrysler-blue);
+    transition: width 0.3s ease-in-out;
+    margin: 0 0 3px 10px;
+}
 
-}*/
+.projects > article > div > p > a:hover::after {
+    width: 50px;
+}
 
-.bg-text {
+.bg-text-1 {
     position: relative;
 }
 
-.bg-text:after {
+.bg-text-1:after {
     content: "hello";
     position: absolute;
     z-index: -1;
@@ -155,7 +165,14 @@ h4 {
     color:var(--magnolia);
 }
 
-/*#header-section::after {
+#header-section::before {
+    content: ' ';
+    display: block;
+    position: relative;
+    z-index: -1;
+}
+
+#header-section::after {
     content: ' ';
     display: inline-block;
     position: absolute;
@@ -167,13 +184,8 @@ h4 {
     background-image: url("./assets/noise-texture.png");
     background-position: bottom center;
     background-size: auto;
+    z-index: -2;
 }
-
-#header-section::before {
-    content: ' ';
-    display: block;
-    position: relative;
-}*/
 
 /*////////////////////////
     4. Areas
@@ -184,6 +196,7 @@ h4 {
 header {
     background: linear-gradient(90deg, rgba(72,69,228,1) 35%, rgba(87,34,205,1) 100%);
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+    z-index: 2;
 }
 
 .nav-bar .nav-list {
@@ -338,6 +351,8 @@ button {
 
 .projects > article > div > p > a {
     text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
 }
 
 .projects .project-content {
